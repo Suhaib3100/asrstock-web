@@ -372,27 +372,6 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-5">
-                                                <p class="fs-14 fw-400 lh-24 text-primary-dark-text">{{getProductTypeCategory($product->product_type_id)}}</p>
-                                            </div>
-                                            <div class="col-7">
-                                                <p class="fs-14 fw-400 lh-24 text-primary-dark-text text-end">
-                                                    #{{$product->id}}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-5">
-                                                <p class="fs-14 fw-400 lh-24 text-primary-dark-text">{{__('Product Type')}}</p>
-                                            </div>
-                                            <div class="col-7">
-                                                <p class="fs-14 fw-400 lh-24 text-primary-dark-text text-end">{{$product->file_types}}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-5">
                                                 <p class="fs-14 fw-400 lh-24 text-primary-dark-text">{{__('Category')}}</p>
                                             </div>
                                             <div class="col-7">
