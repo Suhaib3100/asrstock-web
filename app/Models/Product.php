@@ -188,10 +188,9 @@ class Product extends Model
     protected static function boot()
     {
         parent::boot();
-        self::creating(function($model){
-            $model->uuid = Str::uuid()->toString();
-            $model->total_watch = rand(70000, 100000);
-            $model->download_products_count = rand(7000, 10000);
+        static::creating(function ($model) {
+            $model->slug = Str::slug($model->title);
+            $model->uid = uniqid();
         });
     }
 }
