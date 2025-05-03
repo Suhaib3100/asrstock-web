@@ -32,6 +32,7 @@ class Product extends Model
         'user_id',
         'tax_id',
         'total_watch',
+        'download_products_count',
         'attribution_required',
     ];
 
