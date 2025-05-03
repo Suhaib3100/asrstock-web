@@ -184,6 +184,8 @@ class Product extends Model
         parent::boot();
         self::creating(function($model){
             $model->uuid = Str::uuid()->toString();
+            $model->total_watch = rand(70000, 100000);
+            $model->download_products_count = rand(7000, 10000);
         });
     }
 }
