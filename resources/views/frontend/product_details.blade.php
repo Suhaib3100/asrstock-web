@@ -165,47 +165,21 @@
                             </ul>
                         </div>
                         <div class="item">
-                            <!-- Comments -->
-                            <h4 class="fs-md-24 fs-18 fw-600 lh-34 text-primary-dark-text pb-18">{{$product->comments->where('status', 1)->count()}} {{__('Comments')}}</h4>
-                            <div class="blog-details-commentWrap">
-                                <ul class="list">
-                                    @forelse($product->comments->where('status', 1) as $comment)
-                                        <li class="item">
-                                            <div class="left">
-                                                <div class="img">
-                                                    <img src="{{$comment->customer->image}}"
-                                                         alt="{{$comment->customer->name}}"/>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="fs-18 fw-400 lh-28 text-primary-dark-text">{{$comment->customer->name}}</h4>
-                                                    <p class="fs-14 fw-400 lh-24 text-para-text">{!! nl2br($comment->comment) !!}</p>
-                                                </div>
-                                            </div>
-                                            <div class="right">
-                                                <p class="fs-14 fw-400 lh-24 text-para-text pb-5">{{$comment->created_at->diffForHumans()}}</p>
-                                            </div>
-                                        </li>
-                                    @empty
-                                        <li class="item">
-                                            {{__('No Comment Found')}}
-                                        </li>
-                                    @endforelse
-                                </ul>
-                                @auth
-                                    <form action="{{route('customer.products.comment', $product->id)}}" class="ajax"
-                                          method="POST" data-handler="commonResponseForModal">
-                                        @csrf
-                                        <div class="inputWrap">
-                                            <div class="img">
-                                                <img src="{{auth()->user()->image}}" alt=""/>
-                                            </div>
-                                            <div class="w-100">
-                                                <input name="comment" id="productComment" class="zForm-control"
-                                                       placeholder="{{__('Add your thoughts...')}}">
-                                            </div>
-                                        </div>
-                                    </form>
-                                @endauth
+                            <div class="d-flex align-items-center g-20">
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="d-flex">
+                                        <img src="{{asset('assets/images/icon/eye.svg')}}" alt=""/>
+                                    </div>
+                                    <p class="fs-18 fw-400 lh-28 text-primary-dark-text">{{$product->total_watch}}</p>
+                                    <p class="fs-14 fw-400 lh-24 text-para-text">{{__('Views')}}</p>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="d-flex">
+                                        <img src="{{asset('assets/images/icon/download.svg')}}" alt=""/>
+                                    </div>
+                                    <p class="fs-18 fw-400 lh-28 text-primary-dark-text">{{number_format($product->download_products_count)}}</p>
+                                    <p class="fs-14 fw-400 lh-24 text-para-text">{{__('Downloads')}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
