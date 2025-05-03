@@ -345,8 +345,12 @@ class ProductController extends Controller
                 return '<td class="finance-table-inner-item my-2">'.
                     $data->title .
                     '<div class="finance-table-inner-item my-2">'.
-                    '<span class="fw-bold mr-1">' . __('Downloads') . ': </span>' .
-                    $data->downloadProducts->count() .
+                    '<span class="fw-bold mr-1">' . __('Actual Views') . ': </span>' .
+                    number_format($data->total_watch) .
+                    '</div>' .
+                    '<div class="finance-table-inner-item my-2">'.
+                    '<span class="fw-bold mr-1">' . __('Actual Downloads') . ': </span>' .
+                    number_format($data->downloadProducts->count()) .
                     '</div>' .
                     '</td>';
             })
