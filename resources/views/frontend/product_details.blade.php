@@ -239,7 +239,7 @@
                                             <img src="{{asset('assets/images/icon/productCount-download.svg')}}"
                                                  alt=""/>
                                         </div>
-                                        <p class="fs-18 fw-400 lh-28 text-primary-dark-text">{{$product->download_count}}</p>
+                                        <p class="fs-18 fw-400 lh-28 text-primary-dark-text">{{number_format($product->download_products_count)}}</p>
                                     </div>
                                     <p class="fs-14 fw-400 lh-24 text-para-text">{{__('Downloads')}}</p>
                                 </div>

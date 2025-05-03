@@ -25,7 +25,7 @@ class ProductController extends Controller
 
         $data['product'] = Product::published()->where(['slug' => $slug])
             ->with(['user', 'customer', 'productCategory', 'productTags.tag', 'comments.customer', 'variations:id,product_id,price,variation', 'colors'])
-            ->withCount(['downloadProducts', 'favouriteProducts'])
+            ->select('products.*')  // Ensure we select all columns including download_products_count
             ->firstOrFail();
         $data['pageTitle'] = $data['product']->title;
         Product::where('id', $data['product']->id)->increment('total_watch', 1);
