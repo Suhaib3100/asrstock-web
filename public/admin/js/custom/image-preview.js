@@ -5,8 +5,8 @@ function previewFile(input) {
     var file = input.files[0];
     var reader = new FileReader();
 
-    if(input.files[0].size > 10000000){
-        alert("Maximum file size is 10MB!");
+    if(input.files[0].size > 1000000){
+        alert("Maximum file size is 1MB!");
     } else {
         reader.onloadend = function() {
             preview.src = reader.result;

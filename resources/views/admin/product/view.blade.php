@@ -97,54 +97,6 @@
             </li>
         </ul>
     </div>
-
-    <!-- Statistics Section -->
-    <div class="bg-white bd-one bd-c-stroke bd-ra-10 p-sm-30 p-15 mt-24">
-        <div class="px-sm-30 py-15 p-15 bd-b-one bd-c-stroke d-flex align-items-center g-10 flex-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M12 20V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M18 20V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 20V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h4 class="fs-16 fw-400 lh-26 text-primary-dark-text">{{ __('Statistics') }}</h4>
-        </div>
-        <div class="row g-24 p-sm-30 p-15">
-            <div class="col-lg-6">
-                <div class="bd-one bd-c-stroke bd-ra-8 p-20">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="fs-14 fw-400 lh-24 text-para-text">{{ __('Total Views') }}</p>
-                            <h4 class="fs-24 fw-600 lh-24 text-primary-dark-text">{{ number_format($product->total_watch) }}</h4>
-                        </div>
-                        <div class="d-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5Z" stroke="#5D697A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#5D697A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="bd-one bd-c-stroke bd-ra-8 p-20">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="fs-14 fw-400 lh-24 text-para-text">{{ __('Total Downloads') }}</p>
-                            <h4 class="fs-24 fw-600 lh-24 text-primary-dark-text">{{ number_format($product->downloadProducts->count()) }}</h4>
-                        </div>
-                        <div class="d-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#5D697A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M7 10L12 15L17 10" stroke="#5D697A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 15V3" stroke="#5D697A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     @if($product->accessibility == DOWNLOAD_ACCESSIBILITY_TYPE_PAID)
         <div class="bg-white bd-one bd-c-stroke bd-ra-10 p-sm-30 p-15 mt-24">
             <table class="table zTable zTable-last-item-right">

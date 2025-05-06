@@ -32,11 +32,10 @@ class Product extends Model
         'user_id',
         'tax_id',
         'total_watch',
-        'download_products_count',
         'attribution_required',
     ];
 
-    protected $appends = ['thumbnail_image', 'main_file', 'favourite_by_auth_customer','content_type', 'play_link', 'download_count'];
+    protected $appends = ['thumbnail_image', 'main_file', 'favourite_by_auth_customer','content_type', 'play_link'];
     protected $with = ['user', 'customer'];
 
     public function scopePublished($query)
@@ -179,18 +178,12 @@ class Product extends Model
     {
         return $query->whereUploadedBy(PRODUCT_UPLOADED_BY_CONTRIBUTOR);
     }
-    
-    public function getDownloadCountAttribute()
-    {
-        return $this->download_products_count ?? rand(7000, 10000);
-    }
 
     protected static function boot()
     {
         parent::boot();
-        static::creating(function ($model) {
-            $model->slug = Str::slug($model->title);
-            $model->uid = uniqid();
+        self::creating(function($model){
+            $model->uuid = Str::uuid()->toString();
         });
     }
 }
