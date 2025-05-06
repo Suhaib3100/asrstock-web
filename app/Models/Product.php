@@ -179,7 +179,7 @@ class Product extends Model
     {
         return $query->whereUploadedBy(PRODUCT_UPLOADED_BY_CONTRIBUTOR);
     }
-
+    
     public function getDownloadCountAttribute()
     {
         return $this->download_products_count ?? rand(7000, 10000);
